@@ -38,8 +38,8 @@ describe("MyToken unit Test", () => {
     });
     it("burn invoke should be owner", async () => {
       const { mtoken, otherAccount } = await loadFixture(deployMyToken);
-      expect(mtoken.connect(otherAccount).burn(1_000)).to.be.revertedWith(
-        "Forbidden"
+      await expect(mtoken.connect(otherAccount).burn(1_000)).to.be.revertedWith(
+        "Forbidden for user"
       );
     });
     it("burn owner's balance should be equal to input amount", async () => {
