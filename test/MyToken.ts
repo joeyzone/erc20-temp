@@ -6,7 +6,7 @@ import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
-describe("MyToken unit Test", () => {
+describe("MyToken unit Test  ", () => {
   async function deployMyToken() {
     const supplyInit = 10_000;
     const [owner, otherAccount] = await ethers.getSigners();
